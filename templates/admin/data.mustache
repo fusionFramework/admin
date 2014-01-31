@@ -1,0 +1,62 @@
+<div class="row">
+	<div class="col-lg-offset-2 col-lg-8">
+		<table class="table table-hover">
+			<thead>
+			<th>Type</th>
+			<th class="col-lg-8">Description</th>
+			<th class="col-lg-1"></th>
+			</thead>
+			{{#db}}
+			<tr>
+				<td>Database</td>
+				<td>Backup and export all the data in your database (this does not backup database structure, just data)</td>
+				<td><a href="#" class="btn btn-primary" id="act-db">Initiate</a></td>
+			</tr>
+			{{/db}}
+			{{#app}}
+			<tr>
+				<td>Application</td>
+				<td>Backup and export your application (this will export all the classes and config files)</td>
+				<td><a href="#" class="btn btn-primary" id="act-app">Initiate</a></td>
+			</tr>
+			{{/app}}
+			{{#htdocs}}
+			<tr>
+				<td>Assets & media</td>
+				<td>Backup and export all your assets & media files</td>
+				<td><a href="#" class="btn btn-primary" id="act-htdocs">Initiate</a></td>
+			</tr>
+			{{/htdocs}}
+			{{#cache}}
+			<tr>
+				<td>Cache</td>
+				<td>Clear out your application's cache</td>
+				<td><a href="#" class="btn btn-danger" id="act-cache">Clear</a></td>
+			</tr>
+			{{/cache}}
+			{{#temp}}
+			<tr>
+				<td>tmp files</td>
+				<td>Clear out all the files that were temporarily saved</td>
+				<td><a href="#" class="btn btn-danger" id="act-tmp">Clear</a></td>
+			</tr>
+			{{/temp}}
+		</table>
+	</div>
+</div>
+
+<div class="modal fade" id="modal-config">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h4 class="modal-title">Config options for <span id="modal-config-file"></span></h4>
+	</div>
+	<div class="modal-body">
+		<form id="cfg-form" class="form-horizontal">
+
+		</form>
+	</div>
+</div><!-- /#modal-config -->
+
+<script type="application/javascript">
+	var data_routes = {{&routes}};
+</script>

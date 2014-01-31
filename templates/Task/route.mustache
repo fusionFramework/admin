@@ -1,0 +1,112 @@
+/**
+ *	{{title}} admin routes
+ */
+//set the js file route
+Route::set('admin.{{resource}}.js', 'admin/{{url}}/table.js')
+	->defaults(array(
+		'controller' => 'Fusion_CRUD',
+		'action'     => 'js',
+		'master'     => '{{class}}'
+	)
+);
+
+//set the actions js file route
+Route::set('admin.{{resource}}.actions.js', 'admin/{{url}}/actions.js')
+	->defaults(array(
+		'controller' => 'Fusion_CRUD',
+		'action'     => 'js_actions',
+		'master'     => '{{class}}',
+	)
+);
+
+//set the fill table route
+Route::set('admin.{{resource}}.fill', 'admin/{{url}}/fill(/<id>)', array('id' => '([0-9]*)'))
+	->defaults(array(
+		'controller' => 'Fusion_CRUD',
+		'action' => 'fill_table',
+		'id' => 0,
+		'master' => '{{class}}'
+	)
+);
+
+//set the delete record route
+Route::set('admin.{{resource}}.remove', 'admin/{{url}}/<id>/remove', array('id' => '([0-9]*)'))
+	->defaults(array(
+		'controller' => 'Fusion_CRUD',
+		'action' => 'remove',
+		'master' => '{{class}}'
+	)
+);
+
+{{#perform}}
+// Add the ability to perform an action on several records
+Route::set('admin.{{resource}}.perform', 'admin/{{url}}/perform')
+	->defaults(array(
+		'controller' => 'Fusion_CRUD',
+		'action' => 'perform',
+		'master' => '{{class}}'
+	)
+);
+{{/perform}}
+
+{{#track_changes}}
+//set the record history route
+Route::set('admin.{{resource}}.history', 'admin/{{url}}/<id>/history', array('id' => '([0-9]*)'))
+	->defaults(array(
+		'controller' => 'Fusion_CRUD',
+		'action' => 'history',
+		'master' => '{{class}}'
+	)
+);
+{{/track_changes}}
+
+{{#upload}}
+//set the upload route
+Route::set('admin.{{resource}}.upload', 'admin/{{url}}/upload')
+	->defaults(array(
+		'controller' => 'Fusion_CRUD',
+		'action' => 'upload',
+		'master' => '{{class}}'
+	)
+);
+{{/upload}}
+
+//set the load record route
+Route::set('admin.{{resource}}.modal', 'admin/{{url}}/<id>/load', array('id' => '([0-9]*)'))
+	->defaults(array(
+		'controller' => 'Fusion_CRUD',
+		'action' => 'modal',
+		'master' => '{{class}}'
+	)
+);
+
+//set the save record route
+Route::set('admin.{{resource}}.save', 'admin/{{url}}/save')
+	->defaults(array(
+		'controller' => 'Fusion_CRUD',
+		'action' => 'save',
+		'master' => '{{class}}'
+	)
+);
+
+{{#actions}}
+//set the save record route
+Route::set('admin.{{resource}}.{{name}}', 'admin/{{url}}/{{name}}')
+	->defaults(array(
+		'controller' => 'Fusion_CRUD',
+		'action' => 'proxy',
+		'admin_action' => '{{name}}',
+		'master' => '{{class}}'
+	)
+);
+{{/actions}}
+
+//set the index route
+Route::set('admin.{{resource}}.index', 'admin/{{url}}(/<id>)', array('id' => '([0-9]*)'))
+	->defaults(array(
+		'controller' => 'Fusion_CRUD',
+		'action' => 'table',
+		'id' => null,
+		'master' => '{{class}}'
+	)
+);

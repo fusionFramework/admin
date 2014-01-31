@@ -1,0 +1,38 @@
+<div class="row">
+	<div class="col-lg-offset-3 col-lg-6">
+		<table class="table table-hover">
+			<thead>
+			<th>File</th>
+			<th class="col-lg-8">Description</th>
+			<th class="col-lg-2"></th>
+			</thead>
+			{{#definitions}}
+			<tr>
+				<td>{{name}}</td>
+				<td class="text-muted">{{description}}</td>
+				<td>{{^disabled}}<a href="#" class="btn btn-success cfg-edit" data-file="{{file}}"><i class="fa fa-pencil"></i></a>{{/disabled}}</td>
+			</tr>
+			{{/definitions}}
+		</table>
+	</div>
+</div>
+
+<div class="modal fade" id="modal-config">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h4 class="modal-title">Config options for <span id="modal-config-file"></span></h4>
+	</div>
+	<div class="modal-body">
+		<div class="row">
+			<div id="cfg-form" class="col-lg-11">
+
+			</div>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		<button type="button" class="btn btn-success" id="modal-save">Save</button>
+	</div>
+</div><!-- /#modal-config -->
+
+<span id="csrf" class="hide">{{csrf}}</span>

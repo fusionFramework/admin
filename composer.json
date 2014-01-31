@@ -1,0 +1,29 @@
+{
+	"name"       :"fusionFramework/admin",
+	"description":"fusionFramework's admin package",
+	"type"       :"fusionFramework",
+	"homepage"   :"https://github.com/fusionFramework/admin",
+	"license"    :"MIT",
+	"authors"    :[
+		{
+			"name"    :"Maxim Kerstens",
+			"email"   :"maxim.kerstens@gmail.com",
+			"role"    :"Project maintainer"
+		}
+	],
+	"repositories": [
+		{
+			"type": "composer",
+			"url": "http://ktt-happydemon.rhcloud.com"
+		}
+	],
+	"require": {
+		"fusionFramework/app": "*",
+		"kohana-minion/tasks-migrations": "*",
+		"happydemon/data-table": "0.4",
+		"bmidget/kohana-formo": "3.1.*",
+		"samwilson/kohana_datalog": "0.2.1",
+		"guzzle/guzzle": "v3.7.4",
+		"frenkynet/flysystem": "0.1.20"
+	}
+}

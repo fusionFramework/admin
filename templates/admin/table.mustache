@@ -1,0 +1,53 @@
+<div class="row">
+	<div class="col-lg-12">
+		<div class="box">
+			<header>
+				<h5>{{header}}</h5>
+				{{#has_toolbar}}
+				<div class="toolbar">
+					{{#has_methods}}
+					<select id="table-methods" class="col-sm-2">
+						{{#methods}}
+						<option value="{{name}}">{{value}}</option>
+						{{/methods}}
+					</select>
+					 <a href="#" class="btn btn-sm btn-primary">Perform</a>
+					{{/has_methods}}
+					{{#display_info}}
+					 <button class="btn btn-info btn-line btn-sm" data-toggle="modal" data-target="#modal-help"><i class="fa fa-question-circle"></i></button>
+					{{/display_info}}
+				</div>
+				{{/has_toolbar}}
+			</header>
+			<div class="body" id="table-container">
+				{{&table}}
+			</div>
+		</div>
+	</div>
+</div>
+
+{{&modal}}
+
+{{#display_info}}
+	<div class="modal fade" id="modal-help">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+					<h4 class="modal-title">Help</h4>
+				</div>
+				<div class="modal-body">
+					{{&info_modal}}
+				</div>
+	</div><!-- /#modal-help -->
+{{/display_info}}
+{{#history}}
+<div class="modal fade" id="modal-history">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		<h4 class="modal-title">History for #<span id="modal-history-id"></span></h4>
+	</div>
+	<div class="modal-body">
+		<div class="panel-group" id="history-panels">
+		</div>
+	</div>
+</div><!-- /#modal-history -->
+{{/history}}
