@@ -1,5 +1,8 @@
 # Fusion Framework admin module
 
+Lays out the base for your game's admin.
+
+This module provides an admin generator to cut down on the time spent creating admin pages.
 
 ## Tasks
 

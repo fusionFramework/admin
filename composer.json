@@ -14,7 +14,7 @@
 	"repositories": [
 		{
 			"type": "composer",
-			"url": "http://ktt-happydemon.rhcloud.com"
+			"url": "http://fusion.happydemon.org/"
 		}
 	],
 	"require": {

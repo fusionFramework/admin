@@ -21,7 +21,7 @@ class Task_Admin_Stats extends Minion_Task
 		foreach ($dirs as $fileInfo) {
 			if($fileInfo->isDir())
 			{
-				$admin = $fileInfo->getRealPath().DIRECTORY_SEPARATOR.'module'.DIRECTORY_SEPARATOR.'admin.php';
+				$admin = $fileInfo->getRealPath().DIRECTORY_SEPARATOR.'module'.DIRECTORY_SEPARATOR.'minion.php';
 				if(file_exists($admin))
 				{
 					require_once $admin;
